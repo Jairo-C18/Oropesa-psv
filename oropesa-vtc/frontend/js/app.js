@@ -1071,7 +1071,7 @@ getElement("application-form")?.addEventListener("submit", async (event) => {
     if (status) {
       status.className = "mt-4 text-sm font-semibold text-emerald-500";
       status.textContent =
-        "¡Postulación enviada! Si es el primer envío, el propietario del correo debe confirmar la activación de FormSubmit.";
+        "¡Postulación enviada! En breve, el lider te escribirá por whatsapp al número que enviaste.";
     }
   } catch (error) {
     if (status) {
