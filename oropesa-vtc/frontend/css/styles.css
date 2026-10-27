@@ -251,6 +251,7 @@ body[data-theme="light"] .social-link-card { border-color: #f0dada; color: #2020
 
 body {
   background-color: #090a0d;
+  padding-top: 4.5rem;
   overflow-x: hidden;
 }
 
