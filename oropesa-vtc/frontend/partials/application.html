@@ -1,0 +1,105 @@
+<section id="postulacion" class="border-y border-white/10 bg-white/[0.025] py-16 sm:py-20" aria-labelledby="application-title">
+  <div class="mx-auto max-w-5xl px-5 sm:px-8">
+    <div class="mb-8">
+      <p class="text-xs font-bold uppercase tracking-[0.25em] text-red-400">Únete a la carretera</p>
+      <h2 id="application-title" class="mt-3 text-3xl font-black text-white sm:text-4xl">Postulación a Oropesa VTC</h2>
+      <p class="mt-3 max-w-2xl text-sm leading-6 text-zinc-400">
+        Completa tus datos y nuestro equipo revisará tu solicitud.
+      </p>
+    </div>
+
+    <form id="application-form" class="rounded-2xl border border-white/10 bg-[#111216] p-5 shadow-xl shadow-black/10 sm:p-8">
+      <input type="hidden" name="_subject" value="Nueva postulación - Oropesa VTC" />
+      <input type="hidden" name="_template" value="table" />
+      <div class="grid gap-5 sm:grid-cols-2">
+        <div>
+          <label class="mb-2 block text-sm font-bold text-zinc-200" for="application-name">Nombre o nickname <span class="text-red-400">*</span></label>
+          <input class="application-input" id="application-name" name="Nombre o nickname" type="text" maxlength="80" autocomplete="nickname" placeholder="Ej.: TruckerPro_PE" required />
+        </div>
+        <div>
+          <label class="mb-2 block text-sm font-bold text-zinc-200" for="application-steam">Link de Steam o ID <span class="text-red-400">*</span></label>
+          <input class="application-input" id="application-steam" name="Link de Steam o ID" type="text" maxlength="160" placeholder="https://steamcommunity.com/id/..." required />
+        </div>
+        <div>
+          <label class="mb-2 block text-sm font-bold text-zinc-200" for="application-phone">WhatsApp con código de país <span class="text-red-400">*</span></label>
+          <div class="flex gap-2">
+            <select class="application-input w-28 shrink-0 px-2 sm:w-32" id="application-country-code" name="Código de país" aria-label="Código de país" required>
+              <option value="+51" selected>PE +51</option>
+              <option value="+1">US/CA +1</option>
+              <option value="+34">ES +34</option>
+              <option value="+52">MX +52</option>
+              <option value="+54">AR +54</option>
+              <option value="+56">CL +56</option>
+              <option value="+57">CO +57</option>
+              <option value="+58">VE +58</option>
+              <option value="+591">BO +591</option>
+              <option value="+593">EC +593</option>
+              <option value="+595">PY +595</option>
+              <option value="+598">UY +598</option>
+            </select>
+            <input class="application-input min-w-0 flex-1" id="application-phone" name="WhatsApp" type="tel" inputmode="tel" autocomplete="tel-national" maxlength="24" placeholder="987 654 321" required />
+          </div>
+        </div>
+        <div>
+          <label class="mb-2 block text-sm font-bold text-zinc-200" for="application-age">Edad (mínimo 16 años) <span class="text-red-400">*</span></label>
+          <input class="application-input" id="application-age" name="Edad" type="number" min="16" max="99" step="1" inputmode="numeric" placeholder="Ej.: 18" required />
+        </div>
+        <div>
+          <label class="mb-2 block text-sm font-bold text-zinc-200" for="application-company-history">¿Has pertenecido a alguna empresa antes?</label>
+          <input class="application-input" id="application-company-history" name="Empresas anteriores" type="text" maxlength="200" placeholder="Ej.: Ninguna / TruckersMP Express / etc." />
+        </div>
+        <div>
+          <label class="mb-2 block text-sm font-bold text-zinc-200" for="application-availability">Disponibilidad semanal <span class="text-red-400">*</span></label>
+          <select class="application-input" id="application-availability" name="Disponibilidad semanal" required>
+            <option value="" selected disabled>Selecciona tu disponibilidad</option>
+            <option>Menos de 5 horas</option>
+            <option>5 a 10 horas</option>
+            <option>10 a 20 horas</option>
+            <option>Más de 20 horas</option>
+            <option>Horario flexible</option>
+          </select>
+        </div>
+      </div>
+
+      <fieldset class="mt-7">
+        <legend class="mb-3 text-sm font-bold text-zinc-200">¿Tienes sanciones o bans en el servidor de Perú Server (PSV)? <span class="text-red-400">*</span></legend>
+        <div class="grid gap-3 sm:grid-cols-3">
+          <label class="application-choice">
+            <input class="sr-only" type="radio" name="Sanciones o bans PSV" value="No, nunca" required />
+            <span class="text-lg text-emerald-400" aria-hidden="true">✓</span>
+            <span>No, nunca</span>
+          </label>
+          <label class="application-choice">
+            <input class="sr-only" type="radio" name="Sanciones o bans PSV" value="Sí, hace más de un año" />
+            <span class="text-lg text-amber-400" aria-hidden="true">↻</span>
+            <span>Sí, hace más de un año</span>
+          </label>
+          <label class="application-choice">
+            <input class="sr-only" type="radio" name="Sanciones o bans PSV" value="Sí, recientemente" />
+            <span class="text-lg text-red-400" aria-hidden="true">!</span>
+            <span>Sí, recientemente</span>
+          </label>
+        </div>
+      </fieldset>
+
+      <label class="mt-7 flex cursor-pointer items-start gap-3 text-sm leading-6 text-zinc-300">
+        <input class="mt-1 h-4 w-4 shrink-0 accent-red-600" name="Acepta las reglas de PSV y Oropesa" type="checkbox" value="Sí" required />
+        <span>Estoy dispuesto a cumplir con las reglas de <strong class="text-white">PSV</strong>, mantener el respeto en el servidor y cumplir estrictamente con la normativa interna de <strong class="text-red-400">Oropesa VTC</strong>.</span>
+      </label>
+
+      <label class="mt-4 flex cursor-pointer items-start gap-3 text-sm leading-6 text-zinc-300">
+        <input class="mt-1 h-4 w-4 shrink-0 accent-red-600" name="Consentimiento de tratamiento de datos" type="checkbox" value="Sí" required />
+        <span>Autorizo que los datos de esta postulación sean procesados por FormSubmit y enviados a Oropesa VTC para evaluar mi solicitud. <span class="text-red-400">*</span></span>
+      </label>
+
+      <p class="mt-5 text-xs leading-5 text-zinc-500">
+        Al enviar, tus datos serán procesados por FormSubmit para entregar la postulación a Oropesa VTC. Se enviarán a toropesapsv@gmail.com.
+      </p>
+      <p id="application-status" class="mt-4 text-sm" role="status" aria-live="polite"></p>
+      <button id="application-submit" class="mt-5 w-full rounded-xl bg-gradient-to-r from-red-700 to-red-500 px-6 py-4 text-sm font-black uppercase tracking-wider text-white shadow-lg shadow-red-950/30 transition hover:from-red-600 hover:to-red-400 disabled:cursor-wait disabled:opacity-60" type="submit">
+        Enviar postulación
+      </button>
+    </form>
+  </div>
+</section>
+</body>

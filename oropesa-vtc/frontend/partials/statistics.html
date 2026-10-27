@@ -1,0 +1,107 @@
+<section id="estadisticas" class="relative overflow-hidden border-y border-white/10 bg-[#0c0d10] py-20 sm:py-24" aria-labelledby="stats-title">
+  
+  <!-- Destello ambiental de fondo -->
+  <div class="absolute -left-40 top-1/2 -z-10 h-96 w-96 rounded-full bg-red-600/10 blur-[120px]" aria-hidden="true"></div>
+  <div class="absolute -right-40 bottom-0 -z-10 h-96 w-96 rounded-full bg-red-600/5 blur-[120px]" aria-hidden="true"></div>
+
+  <div class="mx-auto max-w-7xl px-5 sm:px-8">
+    
+    <!-- ENCABEZADO DE ESTADÍSTICAS -->
+    <div class="mb-12 flex flex-col justify-between gap-6 sm:flex-row sm:items-end">
+      <div>
+        <p class="mb-3 inline-flex items-center gap-2 rounded-full border border-red-500/20 bg-red-500/10 px-3 py-1 text-[10px] font-black uppercase tracking-[0.25em] text-red-400">
+          <span class="h-1.5 w-1.5 rounded-full bg-red-500 shadow-[0_0_8px_rgba(239,68,68,0.8)] animate-pulse" aria-hidden="true"></span>
+          En la carretera
+        </p>
+        <h2 id="stats-title" class="text-4xl font-black tracking-tight text-white sm:text-5xl">
+          Nuestras <span class="bg-gradient-to-r from-red-500 to-red-400 bg-clip-text text-transparent"> cifras</span>
+        </h2>
+      </div>
+      
+      <!-- Botones de Acción Premium -->
+      <div class="flex flex-wrap items-center gap-3.5">
+        <a
+          class="group relative inline-flex items-center gap-2.5 overflow-hidden rounded-xl bg-gradient-to-r from-red-600 to-red-500 px-5 py-3 text-xs font-black uppercase tracking-wider text-white shadow-[0_4px_20px_rgba(230,28,28,0.35)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_0_25px_rgba(255,255,255,0.6)] active:translate-y-0"
+          href="https://hub.truckyapp.com/company/48241"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <!-- Capa base blanca brillante al pasar el mouse -->
+          <span class="absolute inset-0 bg-white opacity-0 transition-opacity duration-300 group-hover:opacity-100"></span>
+          
+          <!-- El texto cambia a rojo al hacer hover para contrastar con el fondo blanco -->
+          <span class="relative z-10 flex items-center gap-2 transition-colors duration-300 group-hover:text-red-600">
+            Abrir VTC en Trucky
+            <svg class="h-3.5 w-3.5 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+          </span>
+        </a>
+        <button
+          id="refresh-data"
+          class="group relative inline-flex items-center gap-2 rounded-xl border border-white/10 bg-white/[0.03] px-5 py-3 text-xs font-black uppercase tracking-wider text-zinc-300 backdrop-blur-md transition-all duration-300 hover:-translate-y-0.5 hover:border-red-500/50 hover:bg-white/[0.06] hover:text-white active:translate-y-0 disabled:cursor-wait disabled:opacity-50"
+          type="button"
+        >
+          <svg class="h-3.5 w-3.5 text-zinc-400 transition-transform duration-500 group-hover:rotate-180 group-hover:text-red-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path></svg>
+          <span>Actualizar datos</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- TARJETAS DE ESTADÍSTICAS -->
+    <div class="grid gap-5 sm:grid-cols-2 xl:grid-cols-5">
+      <article class="group relative overflow-hidden rounded-2xl border border-white/10 bg-[#111216] p-7 transition-all duration-300 hover:-translate-y-1 hover:border-red-500/50 hover:shadow-[0_12px_40px_rgba(230,28,28,0.15)]">
+        <p class="text-xs font-bold uppercase tracking-wider text-zinc-400">Km acumulados de la empresa</p>
+        <p class="mt-4 flex flex-wrap items-baseline gap-x-2 text-4xl font-black tracking-tight text-white sm:text-5xl xl:text-4xl">
+          <span id="stat-kilometers">—</span>
+          <span class="whitespace-nowrap text-base font-bold text-red-400">KM</span>
+        </p>
+        <div class="absolute -right-6 -top-6 h-28 w-28 rounded-full bg-red-500/10 blur-3xl transition-all duration-500 group-hover:bg-red-500/25"></div>
+      </article>
+
+      <article class="group relative overflow-hidden rounded-2xl border border-white/10 bg-[#111216] p-7 transition-all duration-300 hover:-translate-y-1 hover:border-red-500/50 hover:shadow-[0_12px_40px_rgba(230,28,28,0.15)]">
+        <p class="text-xs font-bold uppercase tracking-wider text-zinc-400">Kilómetros de este mes</p>
+        <p class="mt-4 flex flex-wrap items-baseline gap-x-2 text-4xl font-black tracking-tight text-white sm:text-5xl xl:text-4xl">
+          <span id="stat-monthly-kilometers">—</span>
+          <span class="whitespace-nowrap text-base font-bold text-red-400">KM</span>
+        </p>
+        <div class="absolute -right-6 -top-6 h-28 w-28 rounded-full bg-red-500/10 blur-3xl transition-all duration-500 group-hover:bg-red-500/25"></div>
+      </article>
+
+      <article class="group relative overflow-hidden rounded-2xl border border-white/10 bg-[#111216] p-7 transition-all duration-300 hover:-translate-y-1 hover:border-red-500/50 hover:shadow-[0_12px_40px_rgba(230,28,28,0.15)]">
+        <p class="text-xs font-bold uppercase tracking-wider text-zinc-400">Entregas completadas</p>
+        <p class="mt-4 flex flex-wrap items-baseline gap-x-2 text-4xl font-black tracking-tight text-white sm:text-5xl xl:text-4xl">
+          <span id="stat-completed">—</span>
+          <span class="whitespace-nowrap text-base font-bold text-red-400">TRABAJOS</span>
+        </p>
+        <div class="absolute -right-6 -top-6 h-28 w-28 rounded-full bg-red-500/10 blur-3xl transition-all duration-500 group-hover:bg-red-500/25"></div>
+      </article>
+
+      <article class="group relative overflow-hidden rounded-2xl border border-white/10 bg-[#111216] p-7 transition-all duration-300 hover:-translate-y-1 hover:border-red-500/50 hover:shadow-[0_12px_40px_rgba(230,28,28,0.15)]">
+        <p class="text-xs font-bold uppercase tracking-wider text-zinc-400">Conductores</p>
+        <p class="mt-4 flex flex-wrap items-baseline gap-x-2 text-4xl font-black tracking-tight text-white sm:text-5xl xl:text-4xl">
+          <span id="stat-drivers">15</span>
+          <span class="whitespace-nowrap text-base font-bold text-red-400">CONDUCTORES</span>
+        </p>
+        <div class="absolute -right-6 -top-6 h-28 w-28 rounded-full bg-red-500/10 blur-3xl transition-all duration-500 group-hover:bg-red-500/25"></div>
+      </article>
+      <!--
+      <article class="group relative overflow-hidden rounded-2xl border border-white/10 bg-[#111216] p-7 transition-all duration-300 hover:-translate-y-1 hover:border-red-500/50 hover:shadow-[0_12px_40px_rgba(230,28,28,0.15)]">
+        <p class="text-xs font-bold uppercase tracking-wider text-zinc-400">Kilómetros de carrera</p>
+        <p class="mt-4 flex flex-wrap items-baseline gap-x-2 text-4xl font-black tracking-tight text-white sm:text-5xl xl:text-4xl">
+          <span id="stat-race-km">—</span>
+          <span class="whitespace-nowrap text-base font-bold text-red-400">KM</span>
+        </p>
+        <div class="absolute -right-6 -top-6 h-28 w-28 rounded-full bg-red-500/10 blur-3xl transition-all duration-500 group-hover:bg-red-500/25"></div>
+      </article>
+      -->
+    </div>
+
+    <!-- ESTADO DE LA API -->
+    <div class="mt-6 flex flex-wrap items-center gap-x-3 gap-y-1 text-xs text-zinc-500 font-medium">
+      <span id="api-indicator" class="h-2 w-2 rounded-full bg-zinc-600 animate-pulse" aria-hidden="true"></span>
+      <span id="api-status" role="status" aria-live="polite">Conectando con Trucky...</span>
+    <!--<span id="api-updated" class="sm:ml-auto"></span>-->
+    </div>
+
+  </div>
+</section>
+</body>
