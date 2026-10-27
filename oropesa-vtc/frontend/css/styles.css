@@ -848,13 +848,13 @@ body[data-theme="light"] #inicio > div:not(.hero-background) > div:first-child h
 
 @media (max-width: 640px) {
   #inicio {
-    min-height: 700px;
+    min-height: 820px;
   }
 
   #inicio > div:not(.hero-background) {
-    min-height: 700px;
+    min-height: 820px;
     align-items: flex-start;
-    padding-top: 10.5rem;
+    padding-top: 9.5rem;
     padding-bottom: 3rem;
   }
 
@@ -871,6 +871,22 @@ body[data-theme="light"] #inicio > div:not(.hero-background) > div:first-child h
     gap: 0.45rem;
     font-size: 0.62rem;
     letter-spacing: 0.16em;
+  }
+
+  #inicio h1 + p {
+    margin-top: 1.1rem;
+    font-size: 1rem;
+    line-height: 1.55;
+  }
+
+  #inicio h1 + p + div {
+    margin-top: 1.5rem;
+    gap: 0.65rem;
+  }
+
+  body[data-theme="light"] #inicio > div:not(.hero-background) > div:first-child > p:not(:first-child) {
+    background: transparent;
+    padding: 0;
   }
 
   #inicio h1 {
