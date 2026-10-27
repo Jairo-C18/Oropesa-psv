@@ -1,3 +1,2 @@
 [build]
-  base = "oropesa-vtc"
   publish = "oropesa-vtc"
