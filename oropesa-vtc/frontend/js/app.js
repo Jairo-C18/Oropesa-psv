@@ -1118,6 +1118,32 @@ themeToggle?.addEventListener("click", () => {
   const themeColor = document.querySelector('meta[name="theme-color"]');
   themeColor?.setAttribute("content", isDark ? "#090a0d" : "#f5f5f5");
 });
+
+const mobileMenuToggle = getElement("mobile-menu-toggle");
+const mobileMenu = getElement("mobile-menu");
+const closeMobileMenu = () => {
+  if (!mobileMenu || !mobileMenuToggle) return;
+  mobileMenu.hidden = true;
+  mobileMenuToggle.setAttribute("aria-expanded", "false");
+  mobileMenuToggle.setAttribute("aria-label", "Abrir menú de navegación");
+  mobileMenuToggle.classList.remove("is-open");
+};
+
+mobileMenuToggle?.addEventListener("click", () => {
+  if (!mobileMenu) return;
+  const isOpen = !mobileMenu.hidden;
+  mobileMenu.hidden = isOpen;
+  mobileMenuToggle.setAttribute("aria-expanded", String(!isOpen));
+  mobileMenuToggle.setAttribute(
+    "aria-label",
+    isOpen ? "Abrir menú de navegación" : "Cerrar menú de navegación",
+  );
+  mobileMenuToggle.classList.toggle("is-open", !isOpen);
+});
+
+mobileMenu?.querySelectorAll("a").forEach((link) => {
+  link.addEventListener("click", closeMobileMenu);
+});
 getElement("refresh-data")?.addEventListener("click", loadVtcData);
 loadVtcData();
 window.setInterval(loadVtcData, REFRESH_INTERVAL);
