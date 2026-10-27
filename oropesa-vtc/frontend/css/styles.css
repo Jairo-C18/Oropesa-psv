@@ -1303,3 +1303,61 @@ body[data-theme="light"] .application-choice:has(input:checked) {
 #inicio .hero-kicker {
   color: #e61c1c;
 }
+
+/* Tratamiento claro del hero: limpio, legible y sin el bloque blanco del texto. */
+body[data-theme="light"] #inicio .hero-background {
+  background-image:
+    linear-gradient(90deg, rgb(255 255 255 / 10%) 0%, rgb(255 255 255 / 22%) 48%, rgb(255 255 255 / 42%) 100%),
+    linear-gradient(0deg, rgb(255 255 255 / 28%), transparent 58%),
+    url("../../assets/img/Grupal/Grupal%202.png");
+}
+
+body[data-theme="light"] #inicio > div:not(.hero-background) > div:first-child {
+  border: 1px solid rgb(255 255 255 / 48%);
+  border-radius: 1.25rem;
+  background: rgb(255 255 255 / 18%);
+  box-shadow: 0 16px 40px rgb(127 29 29 / 12%);
+  backdrop-filter: blur(4px);
+}
+
+body[data-theme="light"] #inicio > div:not(.hero-background) > div:first-child > p:not(:first-child) {
+  background: transparent !important;
+  padding: 0 !important;
+  color: #292121;
+  text-shadow: 0 1px 2px rgb(255 255 255 / 75%);
+}
+
+body[data-theme="light"] #inicio > div:not(.hero-background) > div:first-child h1 {
+  color: #202020;
+  text-shadow: 0 2px 3px rgb(255 255 255 / 78%);
+}
+
+body[data-theme="light"] #inicio > div:not(.hero-background) > div:first-child h1 span {
+  color: #d71920;
+}
+
+body[data-theme="light"] #inicio a[href="#ranking"] {
+  border-color: #8f2525;
+  background: rgb(255 255 255 / 72%);
+  color: #7f1d1d;
+  box-shadow: 0 6px 18px rgb(127 29 29 / 12%);
+}
+
+body[data-theme="light"] #inicio a[href="#ranking"]:hover,
+body[data-theme="light"] #inicio a[href="#ranking"]:focus-visible {
+  border-color: #b91c1c;
+  background: #fff;
+  color: #b91c1c;
+}
+
+@media (max-width: 640px) {
+  body[data-theme="light"] #inicio > div:not(.hero-background) > div:first-child {
+    padding: 0.85rem;
+    background: rgb(255 255 255 / 12%);
+  }
+
+  body[data-theme="light"] #inicio a[href="#ranking"] {
+    min-width: 11rem;
+    justify-content: center;
+  }
+}
