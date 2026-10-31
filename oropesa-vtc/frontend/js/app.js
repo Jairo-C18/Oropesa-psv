@@ -703,6 +703,25 @@ let rankingPeriod = "month";
 let rankingDate = new Date();
 const expandedRankings = { month: false, total: false };
 
+// Excepción autorizada: trabajo omitido por un error de moneda en Trucky.
+// Solo afecta al ranking del conductor 289052; no modifica las cifras de empresa.
+function getDriverRankingJobs(jobs) {
+  if (jobs.some((job) => Number(job.id) === 27625420)) {
+    return jobs;
+  }
+  const driver = jobs.find((job) => Number(job.driver?.id) === 289052)?.driver;
+  return jobs.concat({
+    id: 27625420,
+    user_id: 289052,
+    company_id: COMPANY_ID,
+    status: "completed",
+    driven_distance_km: 697,
+    completed_at: "2026-10-10T22:49:00Z",
+    public_url: "https://hub.truckyapp.com/job/27625420",
+    driver: driver || { id: 289052, name: "fabian.quilca.uscata" },
+  });
+}
+
 function renderDriverRanking(jobs, date = new Date()) {
   const list = getElement("ranking-list");
   const moreButton = getElement("ranking-more");
@@ -717,9 +736,10 @@ function renderDriverRanking(jobs, date = new Date()) {
     month: "long",
     year: "numeric",
   }).format(date);
+  const eligibleJobs = getDriverRankingJobs(jobs);
   const periodJobs =
     rankingPeriod === "month"
-      ? jobs.filter((job) => {
+      ? eligibleJobs.filter((job) => {
           const jobDate = new Date(getJobDate(job));
           return (
             Number.isFinite(jobDate.getTime()) &&
@@ -727,7 +747,7 @@ function renderDriverRanking(jobs, date = new Date()) {
             jobDate.getFullYear() === date.getFullYear()
           );
         })
-      : jobs;
+      : eligibleJobs;
   const periodLabel = rankingPeriod === "month" ? `este mes (${monthLabel})` : "en total";
   list.setAttribute(
     "aria-label",
